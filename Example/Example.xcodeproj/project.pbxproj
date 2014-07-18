@@ -21,6 +21,7 @@
 		00C81A2B197985D7005ABCCA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C81A0D197985D7005ABCCA /* UIKit.framework */; };
 		00C81A33197985D7005ABCCA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00C81A31197985D7005ABCCA /* InfoPlist.strings */; };
 		00C81A35197985D7005ABCCA /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A34197985D7005ABCCA /* ExampleTests.m */; };
+		00C81A7F197988F7005ABCCA /* HCPopBackGestureProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A7D197988F7005ABCCA /* HCPopBackGestureProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		00C81A30197985D7005ABCCA /* ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExampleTests-Info.plist"; sourceTree = "<group>"; };
 		00C81A32197985D7005ABCCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00C81A34197985D7005ABCCA /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
+		00C81A7C197988F7005ABCCA /* HCPopBackGestureProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPopBackGestureProxy.h; sourceTree = "<group>"; };
+		00C81A7D197988F7005ABCCA /* HCPopBackGestureProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPopBackGestureProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		00C819FD197985D7005ABCCA = {
 			isa = PBXGroup;
 			children = (
+				00C81A7E197988F7005ABCCA /* HCPopBackGestureProxy */,
 				00C81A0F197985D7005ABCCA /* Example */,
 				00C81A2E197985D7005ABCCA /* ExampleTests */,
 				00C81A08197985D7005ABCCA /* Frameworks */,
@@ -150,6 +154,16 @@
 				00C81A31197985D7005ABCCA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00C81A7E197988F7005ABCCA /* HCPopBackGestureProxy */ = {
+			isa = PBXGroup;
+			children = (
+				00C81A7C197988F7005ABCCA /* HCPopBackGestureProxy.h */,
+				00C81A7D197988F7005ABCCA /* HCPopBackGestureProxy.m */,
+			);
+			name = HCPopBackGestureProxy;
+			path = ../HCPopBackGestureProxy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			files = (
 				00C81A20197985D7005ABCCA /* ViewController.m in Sources */,
 				00C81A1A197985D7005ABCCA /* AppDelegate.m in Sources */,
+				00C81A7F197988F7005ABCCA /* HCPopBackGestureProxy.m in Sources */,
 				00C81A16197985D7005ABCCA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
