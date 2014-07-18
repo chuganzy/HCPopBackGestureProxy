@@ -13,4 +13,5 @@
 @interface HCPopBackGestureProxy : NSObject <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIViewController <HCPopBackGestureProxyDelegate> *viewController;
 + (HCPopBackGestureProxy *)sharedInstance;
+- (void)viewWillDisappear;
 @end

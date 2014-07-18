@@ -26,8 +26,9 @@
     [self updateNavigationItems];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [HCPopBackGestureProxy sharedInstance].viewController = self;
 }
 
 - (void)updateNavigationItems {
@@ -35,10 +36,15 @@
     [self hc_updateRightBarButtonItems];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[HCPopBackGestureProxy sharedInstance] viewWillDisappear];
+}
+
 - (NSArray *)leftBarButtonItems {
     if (1 < [self.navigationController.viewControllers count]) {
         return @[
-                @"back"
+                @"<"
         ];
     }
     return nil;

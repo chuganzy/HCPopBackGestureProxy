@@ -5,7 +5,10 @@
 
 #import "HCPopBackGestureProxy.h"
 
-@implementation HCPopBackGestureProxy
+@implementation HCPopBackGestureProxy {
+    NSUInteger _viewControllerCountWhenSet;
+    BOOL _isRocked;
+}
 
 #pragma mark - public
 
@@ -19,9 +22,25 @@
     return _instance;
 }
 
+- (void)setViewController:(UIViewController <HCPopBackGestureProxyDelegate> *)viewController {
+    _isRocked = NO;
+    _viewController = viewController;
+    viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+    _viewControllerCountWhenSet = [viewController.navigationController.viewControllers count];
+}
+
+- (void)viewWillDisappear {
+    if (_viewControllerCountWhenSet < [self.viewController.navigationController.viewControllers count]) {
+        _isRocked = YES;
+    }
+}
+
 #pragma mark - delegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (_isRocked) {
+        return NO;
+    }
     if ([self.viewController respondsToSelector:@selector(hcPopBackGestureProxyShouldBegin:)] &&
         ![self.viewController hcPopBackGestureProxyShouldBegin:gestureRecognizer]) {
         return NO;
@@ -53,6 +72,5 @@
     }
     return YES;
 }
-
 
 @end
