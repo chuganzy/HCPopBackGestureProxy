@@ -5,6 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HCPopBackGestureProxy : NSObject <UIGestureRecognizerDelegate>
+@protocol HCPopBackGestureProxyDelegate <UIGestureRecognizerDelegate>
+@optional
+- (BOOL)hcPopBackGestureProxyShouldBegin:(UIGestureRecognizer *)recognizer;
+@end
 
+@interface HCPopBackGestureProxy : NSObject <UIGestureRecognizerDelegate>
+@property (nonatomic, weak) UIViewController <HCPopBackGestureProxyDelegate> *viewController;
++ (HCPopBackGestureProxy *)sharedInstance;
 @end

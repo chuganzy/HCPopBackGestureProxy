@@ -3,8 +3,8 @@
 //  Copyright (c) 2014 Takeru Chuganji. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
-@interface ViewController : UIViewController
+@interface FirstViewController : RootViewController
 
 @end

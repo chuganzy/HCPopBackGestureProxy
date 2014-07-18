@@ -14,7 +14,7 @@
 		00C81A16197985D7005ABCCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A15197985D7005ABCCA /* main.m */; };
 		00C81A1A197985D7005ABCCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A19197985D7005ABCCA /* AppDelegate.m */; };
 		00C81A1D197985D7005ABCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C81A1B197985D7005ABCCA /* Main.storyboard */; };
-		00C81A20197985D7005ABCCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A1F197985D7005ABCCA /* ViewController.m */; };
+		00C81A20197985D7005ABCCA /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A1F197985D7005ABCCA /* RootViewController.m */; };
 		00C81A22197985D7005ABCCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C81A21197985D7005ABCCA /* Images.xcassets */; };
 		00C81A29197985D7005ABCCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C81A28197985D7005ABCCA /* XCTest.framework */; };
 		00C81A2A197985D7005ABCCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C81A09197985D7005ABCCA /* Foundation.framework */; };
@@ -22,6 +22,8 @@
 		00C81A33197985D7005ABCCA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00C81A31197985D7005ABCCA /* InfoPlist.strings */; };
 		00C81A35197985D7005ABCCA /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A34197985D7005ABCCA /* ExampleTests.m */; };
 		00C81A7F197988F7005ABCCA /* HCPopBackGestureProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A7D197988F7005ABCCA /* HCPopBackGestureProxy.m */; };
+		00C81A8219799EE9005ABCCA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C81A8119799EE9005ABCCA /* FirstViewController.m */; };
+		00E0BF1219799F81000C9586 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0BF1119799F81000C9586 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,8 @@
 		00C81A18197985D7005ABCCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00C81A19197985D7005ABCCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00C81A1C197985D7005ABCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		00C81A1E197985D7005ABCCA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		00C81A1F197985D7005ABCCA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00C81A1E197985D7005ABCCA /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		00C81A1F197985D7005ABCCA /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		00C81A21197985D7005ABCCA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00C81A27197985D7005ABCCA /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C81A28197985D7005ABCCA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -56,6 +58,10 @@
 		00C81A34197985D7005ABCCA /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		00C81A7C197988F7005ABCCA /* HCPopBackGestureProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPopBackGestureProxy.h; sourceTree = "<group>"; };
 		00C81A7D197988F7005ABCCA /* HCPopBackGestureProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPopBackGestureProxy.m; sourceTree = "<group>"; };
+		00C81A8019799EE9005ABCCA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		00C81A8119799EE9005ABCCA /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		00E0BF1019799F81000C9586 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		00E0BF1119799F81000C9586 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +125,8 @@
 				00C81A18197985D7005ABCCA /* AppDelegate.h */,
 				00C81A19197985D7005ABCCA /* AppDelegate.m */,
 				00C81A1B197985D7005ABCCA /* Main.storyboard */,
-				00C81A1E197985D7005ABCCA /* ViewController.h */,
-				00C81A1F197985D7005ABCCA /* ViewController.m */,
 				00C81A21197985D7005ABCCA /* Images.xcassets */,
+				00C81A8319799EF2005ABCCA /* ViewControllers */,
 				00C81A10197985D7005ABCCA /* Supporting Files */,
 			);
 			path = Example;
@@ -164,6 +169,19 @@
 			);
 			name = HCPopBackGestureProxy;
 			path = ../HCPopBackGestureProxy;
+			sourceTree = "<group>";
+		};
+		00C81A8319799EF2005ABCCA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				00C81A1E197985D7005ABCCA /* RootViewController.h */,
+				00C81A1F197985D7005ABCCA /* RootViewController.m */,
+				00C81A8019799EE9005ABCCA /* FirstViewController.h */,
+				00C81A8119799EE9005ABCCA /* FirstViewController.m */,
+				00E0BF1019799F81000C9586 /* SecondViewController.h */,
+				00E0BF1119799F81000C9586 /* SecondViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C81A20197985D7005ABCCA /* ViewController.m in Sources */,
+				00E0BF1219799F81000C9586 /* SecondViewController.m in Sources */,
+				00C81A20197985D7005ABCCA /* RootViewController.m in Sources */,
 				00C81A1A197985D7005ABCCA /* AppDelegate.m in Sources */,
+				00C81A8219799EE9005ABCCA /* FirstViewController.m in Sources */,
 				00C81A7F197988F7005ABCCA /* HCPopBackGestureProxy.m in Sources */,
 				00C81A16197985D7005ABCCA /* main.m in Sources */,
 			);
