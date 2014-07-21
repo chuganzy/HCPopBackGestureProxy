@@ -48,7 +48,7 @@ pod 'HCPopBackGestureProxy'
 
 ## Requirement
 
-- iOS7 or later
+- iOS6 or later
 - ARC
 
 ## License
