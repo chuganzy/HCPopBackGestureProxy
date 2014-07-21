@@ -23,6 +23,9 @@
 }
 
 - (void)setViewController:(UIViewController <HCPopBackGestureProxyDelegate> *)viewController {
+    if (![viewController.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        return;
+    }
     _isRocked = NO;
     _viewController = viewController;
     viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
