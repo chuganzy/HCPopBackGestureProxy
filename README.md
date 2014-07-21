@@ -1,5 +1,8 @@
-HCPopBackGestureProxy
-=====================
+# HCPopBackGestureProxy
+
+[![Version](https://img.shields.io/cocoapods/v/HCPopBackGestureProxy.svg?style=flat)](http://cocoadocs.org/docsets/HCPopBackGestureProxy)
+[![License](https://img.shields.io/cocoapods/l/HCPopBackGestureProxy.svg?style=flat)](http://cocoadocs.org/docsets/HCPopBackGestureProxy)
+[![Platform](https://img.shields.io/cocoapods/p/HCPopBackGestureProxy.svg?style=flat)](http://cocoadocs.org/docsets/HCPopBackGestureProxy)
 
 From iOS7, we can go back (popViewController) by swiping the view edge.
 However, this doesn't work when customView is set to `navigationItem.leftBarButtonItems`.
@@ -40,7 +43,10 @@ If you want to disable this gesture partly, implement the protocol method and re
 }
 ```
 
-## CocoaPods
+## Installation
+
+HCPopBackGestureProxy is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'HCPopBackGestureProxy'
@@ -53,4 +59,4 @@ pod 'HCPopBackGestureProxy'
 
 ## License
 
-MIT license.
+HCPopBackGestureProxy is available under the MIT license. See the LICENSE file for more info.
