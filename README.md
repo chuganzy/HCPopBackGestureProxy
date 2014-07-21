@@ -44,6 +44,11 @@ If you want to disable this gesture partly, implement the protocol method and re
 pod 'HCPopBackGestureProxy'
 ```
 
+## Requirement
+
+- iOS7 or later
+- ARC
+
 ## License
 
 MIT license.
