@@ -9,6 +9,8 @@ Additionally, I think this solution is difficult for almost all apps to apply, b
 
 This library is an improvement of the solution above.
 
+![Capture](./Example/Capture/capture.gif)
+
 ## Usage
 
 Just set viewController to sharedInstance on `viewDidAppear`.
