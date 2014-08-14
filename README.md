@@ -16,7 +16,7 @@ This library is an improvement of the solution above.
 
 ## Usage
 
-Just set viewController to sharedInstance on `viewDidAppear`.
+Just set viewController to sharedInstance at `viewDidAppear`.
 
 ```obj-c
 - (void)viewDidAppear:(BOOL)animated {
@@ -25,7 +25,7 @@ Just set viewController to sharedInstance on `viewDidAppear`.
 }
 ```
 
-and, call viewWillDisappear on `viewWillDisappear`.
+and, call viewWillDisappear at `viewWillDisappear`.
 
 ```obj-c
 - (void)viewWillDisappear:(BOOL)animated {
@@ -34,7 +34,7 @@ and, call viewWillDisappear on `viewWillDisappear`.
 }
 ```
 
-If you want to disable this gesture partly, implement the protocol method and return NO.
+If you want to disable this gesture partly, implement the protocol method and return NO like below.
 
 ```
 - (BOOL)hcPopBackGestureProxyShouldBegin:(UIGestureRecognizer *)recognizer {
