@@ -5,10 +5,12 @@
 
 #import "HCPopBackGestureProxy.h"
 
-@implementation HCPopBackGestureProxy {
-    NSUInteger _viewControllerCountWhenSet;
-    BOOL _isRocked;
-}
+@interface HCPopBackGestureProxy ()
+@property (nonatomic) NSUInteger viewControllerCountWhenSet;
+@property (nonatomic, getter=isRocked) BOOL rocked;
+@end
+
+@implementation HCPopBackGestureProxy
 
 #pragma mark - public
 
@@ -22,30 +24,39 @@
     return _instance;
 }
 
+- (void)dealloc {
+    self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+}
+
 - (void)setViewController:(UIViewController <HCPopBackGestureProxyDelegate> *)viewController {
     if (![viewController.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         return;
     }
-    _isRocked = NO;
-    _viewController = viewController;
-    viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
-    _viewControllerCountWhenSet = [viewController.navigationController.viewControllers count];
+    if (_viewController == viewController) {
+        return;
+    }
+    if (viewController.isViewLoaded && viewController.view.window) {
+        self.rocked = NO;
+        _viewController = viewController;
+        viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+        self.viewControllerCountWhenSet = [viewController.navigationController.viewControllers count];
+    }
 }
 
 - (void)viewWillDisappear {
-    if (_viewControllerCountWhenSet < [self.viewController.navigationController.viewControllers count]) {
-        _isRocked = YES;
+    if (self.viewControllerCountWhenSet < [self.viewController.navigationController.viewControllers count]) {
+        self.rocked = YES;
     }
 }
 
 #pragma mark - delegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (_isRocked) {
+    if (self.isRocked) {
         return NO;
     }
     if ([self.viewController respondsToSelector:@selector(hcPopBackGestureProxyShouldBegin:)] &&
-        ![self.viewController hcPopBackGestureProxyShouldBegin:gestureRecognizer]) {
+            ![self.viewController hcPopBackGestureProxyShouldBegin:gestureRecognizer]) {
         return NO;
     }
     return 1 < [self.viewController.navigationController.viewControllers count];
