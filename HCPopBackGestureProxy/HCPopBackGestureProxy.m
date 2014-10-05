@@ -56,7 +56,7 @@
         return NO;
     }
     if ([self.viewController respondsToSelector:@selector(hcPopBackGestureProxyShouldBegin:)] &&
-            ![self.viewController hcPopBackGestureProxyShouldBegin:gestureRecognizer]) {
+        ![self.viewController hcPopBackGestureProxyShouldBegin:gestureRecognizer]) {
         return NO;
     }
     return 1 < [self.viewController.navigationController.viewControllers count];
@@ -70,7 +70,7 @@
     if ([self.viewController respondsToSelector:@selector(gestureRecognizer:shouldRequireFailureOfGestureRecognizer:)]) {
         return [self.viewController gestureRecognizer:gestureRecognizer shouldRequireFailureOfGestureRecognizer:otherGestureRecognizer];
     }
-    return YES;
+    return NO;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
