@@ -24,8 +24,18 @@
     return _instance;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.shouldTransmitGestures = NO;
+    }
+    return self;
+}
+
 - (void)dealloc {
-    self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    if (self.viewController.navigationController.interactivePopGestureRecognizer.delegate == self) {
+        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
 }
 
 - (void)setViewController:(UIViewController <HCPopBackGestureProxyDelegate> *)viewController {
@@ -52,6 +62,9 @@
 #pragma mark - delegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.shouldTransmitGestures && [self.viewController respondsToSelector:_cmd]) {
+        return [self.viewController gestureRecognizerShouldBegin:gestureRecognizer];
+    }
     if (self.isRocked) {
         return NO;
     }
@@ -63,22 +76,28 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (self.shouldTransmitGestures && [self.viewController respondsToSelector:_cmd]) {
+        return [self.viewController gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+    }
     return NO;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if ([self.viewController respondsToSelector:@selector(gestureRecognizer:shouldRequireFailureOfGestureRecognizer:)]) {
+    if (self.shouldTransmitGestures && [self.viewController respondsToSelector:_cmd]) {
         return [self.viewController gestureRecognizer:gestureRecognizer shouldRequireFailureOfGestureRecognizer:otherGestureRecognizer];
     }
     return NO;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (self.shouldTransmitGestures && [self.viewController respondsToSelector:_cmd]) {
+        return [self.viewController gestureRecognizer:gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:otherGestureRecognizer];
+    }
     return YES;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if ([self.viewController respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
+    if (self.shouldTransmitGestures && [self.viewController respondsToSelector:_cmd]) {
         return [self.viewController gestureRecognizer:gestureRecognizer shouldReceiveTouch:touch];
     }
     return YES;
