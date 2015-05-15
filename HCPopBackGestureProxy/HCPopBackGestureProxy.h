@@ -12,6 +12,7 @@
 
 @interface HCPopBackGestureProxy : NSObject <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIViewController <HCPopBackGestureProxyDelegate> *viewController;
+@property (nonatomic) BOOL shouldTransmitGestures;
 + (HCPopBackGestureProxy *)sharedInstance;
 - (void)viewWillDisappear;
 @end
