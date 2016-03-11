@@ -49,6 +49,7 @@
         self.rocked = NO;
         _viewController = viewController;
         viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+        viewController.navigationController.interactivePopGestureRecognizer.delaysTouchesBegan = NO;
         self.viewControllerCountWhenSet = [viewController.navigationController.viewControllers count];
     }
 }
