@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HCPopBackGestureProxy"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.source       = { :git => "https://github.com/hoppenichu/HCPopBackGestureProxy.git", :tag => s.version }
 
   s.summary      = "Enables iOS7 or later swipe-back gesture easily."
